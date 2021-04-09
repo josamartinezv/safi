@@ -49,7 +49,7 @@ public class IUsersServicelmp implements IUsersService {
     public Page<UsersDTO> read (Integer pageSize, Integer pageNumber) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         Rols rols = rolRepository.findByDescription("ROLE_GUEST").get();
-            return usersRepository.findByRols(rols, pageable)
+            return usersRepository.findByRolsOrderByIdUsersDesc(rols, pageable)
                     .map(UsersTransformer::getUsersDTOfromUsers);
 
 

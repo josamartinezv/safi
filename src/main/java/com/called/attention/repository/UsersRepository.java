@@ -19,7 +19,7 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
     //Consulta por documento para crear llamado de atencion
     Users findByDocumentNumber (String documentNumber);
 
-    Page<Users> findByRols (Rols rols, Pageable pageable);
+    Page<Users> findByRolsOrderByIdUsersDesc (Rols rols, Pageable pageable);
 
     ArrayList<Users> findAllByRols(Rols rols);
 
