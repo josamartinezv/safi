@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+
+<head>
+    <title>Email</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1db36e5284.js" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        * {
+            font-family: "Roboto", sans-serif;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            text-align: center;
+
+            /* IMPORTANTE */
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header {
+            height: 70px;
+            background-color: #ff6c00;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .parraphe {
+            font-size: 80%;
+        }
+
+        .tittle2 {
+            margin: 3px;
+            font-size: 80%;
+            font-weight: bold;
+        }
+
+        .tittle {
+            padding-top: 20px;
+            font-size: 140%;
+            color: white;
+            font-weight: bold;
+        }
+
+        .text2 {
+            padding-bottom: 20px;
+            font-size: 10px;
+            color: gray;
+            text-align: justify;
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+
+        .text {
+            font-family: sans-serif;
+            font-size: 14px;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        .p {
+            font-size: 15px;
+        }
+
+        .imagelogo {
+            height: 6em;
+            padding-bottom: 5px;
+        }
+
+        .comunicate {
+            width: 50%;
+            font-size: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .informate {
+            width: 80%;
+            display: inline-block;
+            padding-top: 1%;
+            padding-bottom: 0%;
+            position: relative;
+            bottom: 15px;
+        }
+
+        .p1 {
+            margin-left: 2px;
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="cuerpo">
+<div class="card">
+    <div class="header">
+        <p class="tittle">Llamado de Atencion Verbal</p>
+    </div>
+
+    <div class="content">
+
+        <p class="text">Saludos,<br /></p>
+
+        <p class="p1" th:text="${instructor}">${instructor}</p>
+        <p class="p1" th:text="${instructorlastName}">${lastName}</p>
+
+        <p class="text">Se ha diligenciado el llamado de atencion por parte del Aprendiz:<br /></p>
+
+        <p class="p1" th:text="${name}">${name}</p>
+        <p class="p1" th:text="${lastName}">${lastName}<br /></p>
+
+        <p><a href="http://localhost:4200/dashboard/verbal/verbal-a-list" target="_blank">Diligenciar llamado de
+            atención</a></p>
+
+        <div class="comunicate">
+            <div>
+                <img class="imagelogo" src="sena.png" th:src="|cid:${imageResourceName}|" alt="logo" />
+            </div>
+
+            <div class="informate">
+                <p class="tittle2">Comunicaciones institucionales</p>
+                <p class="parraphe">
+                    Centro de Biotecnologia Industrial <br />
+                    Palmira, Regional del Valle<br />
+                    comunicacinescbi@misena.edu.<br />
+                    +57 (2) 2750968<br />
+                    calle 40 No. 30-44 Palmira Colombia <br />
+                    Peticiones, sugerencia, quejas o reclamos <br />
+                    ingresar a https://bit.ly/37JOsJR
+                </p>
+            </div>
+        </div>
+
+        <p class="text2">
+            Los contenidos, textos, imagenes, archivos enviados en este mensaje
+            son responsabilidad exclusiva del remitente y no reflejan ni
+            comprometen de ninguna mmanera a la institucion. No se autoriza el
+            uso de esta herramienta para el intercambio de correos masivos,
+            cadenas o spam,ni de mensajes ofensivos de caracter politico, sexual
+            o religioso , con fines de lucro, con propositos delictivos o
+            cualquier otro mensaje que se considere indebido o que vaya en
+            contra de la ley Sírvase responder a esté llamados dentro del plazo
+            establecido en el reglamento del aprendiz.
+        </p>
+
+    </div>
+
+
+</div>
+</body>
+
+</html>

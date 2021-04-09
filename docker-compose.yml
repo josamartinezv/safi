@@ -1,0 +1,42 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: attention4
+    ports:
+      - 5434:5432
+
+    networks: 
+      - net-attention
+    
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=ssaavedra094@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=jalvarez1996
+    depends_on: 
+      -  postgres
+    ports: 
+      - 7001:80
+    networks: 
+      - net-attention
+
+  attention-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: attention:0.1
+    depends_on: 
+      - postgres
+    networks: 
+      - net-attention
+    ports: 
+      - 8080:8080
+networks: 
+  net-attention:
+    driver: bridge
