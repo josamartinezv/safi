@@ -36,4 +36,5 @@ public class IDetailUserServiceImp implements IDetailUserService{
         DetailUser detailUser = DetailUserTransformer.getDetailUserFromDetailUserDTO(detailUserDTO);
         return DetailUserTransformer.getDetailUserDTOfromDetailUser(detailUserRepository.save(detailUser));
     }
+
 }

@@ -14,4 +14,6 @@ public interface IDetailUserService {
 
 
     public DetailUserDTO update(DetailUserDTO detailUserDTO);
+
+
 }

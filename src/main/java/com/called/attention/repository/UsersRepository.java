@@ -23,12 +23,7 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 
     ArrayList<Users> findAllByRols(Rols rols);
 
-
-
-
-
-
-
+    Users findByEmailSena(String emailSena);
 
 
 }
